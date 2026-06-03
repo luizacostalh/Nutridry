@@ -1,4 +1,5 @@
 @import "tailwindcss" source(none);
+<<<<<<< HEAD
 @source "./**/*.{ts,tsx}";
 @import "tw-animate-css";
 
@@ -7,6 +8,17 @@
   src: local("Arial");
 }
 
+=======
+@source "../src";
+@import "tw-animate-css";
+
+@layer base {
+  @font-face { font-family: "fallback"; src: local("Arial"); }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+>>>>>>> 70b4748bf40e583342392648a5b8824b0c367388
 @theme inline {
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
@@ -48,12 +60,21 @@
   --cream: oklch(0.96 0.012 80);
   --background: oklch(0.96 0.012 80);
   --foreground: oklch(0.24 0.01 150);
+<<<<<<< HEAD
   --primary: oklch(0.38 0.05 145);
   --primary-dark: oklch(0.28 0.04 145);
   --primary-foreground: oklch(0.96 0.012 80);
   --secondary: oklch(0.66 0.16 50);
   --secondary-foreground: oklch(0.98 0.005 80);
   --gold: oklch(0.74 0.11 75);
+=======
+  --primary: oklch(0.38 0.05 145);          /* #355437 */
+  --primary-dark: oklch(0.28 0.04 145);     /* #1F3525 */
+  --primary-foreground: oklch(0.96 0.012 80);
+  --secondary: oklch(0.66 0.16 50);         /* #D97A2B */
+  --secondary-foreground: oklch(0.98 0.005 80);
+  --gold: oklch(0.74 0.11 75);              /* #D8A35D */
+>>>>>>> 70b4748bf40e583342392648a5b8824b0c367388
   --muted: oklch(0.92 0.012 80);
   --muted-foreground: oklch(0.45 0.02 145);
   --accent: oklch(0.74 0.11 75);
@@ -71,6 +92,7 @@
 }
 
 @layer base {
+<<<<<<< HEAD
   * {
     border-color: var(--color-border);
   }
@@ -79,12 +101,17 @@
     scroll-behavior: smooth;
   }
 
+=======
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+>>>>>>> 70b4748bf40e583342392648a5b8824b0c367388
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
+<<<<<<< HEAD
 
   h1,
   h2,
@@ -136,3 +163,20 @@
 body {
   background: red !important;
 }
+=======
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-up { animation: fade-up 0.8s ease-out both; }
+.animate-fade-in { animation: fade-in 1s ease-out both; }
+.hover-scale { transition: transform 0.4s ease; }
+.hover-scale:hover { transform: scale(1.03); }
+>>>>>>> 70b4748bf40e583342392648a5b8824b0c367388
