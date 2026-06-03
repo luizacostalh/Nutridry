@@ -1,0 +1,138 @@
+@import "tailwindcss" source(none);
+@source "./**/*.{ts,tsx}";
+@import "tw-animate-css";
+
+@font-face {
+  font-family: "fallback";
+  src: local("Arial");
+}
+
+@theme inline {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-gold: var(--gold);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --shadow-soft: 0 10px 40px -12px oklch(0.3 0.04 140 / 0.18);
+  --shadow-card: 0 20px 60px -20px oklch(0.25 0.04 140 / 0.22);
+}
+
+:root {
+  --cream: oklch(0.96 0.012 80);
+  --background: oklch(0.96 0.012 80);
+  --foreground: oklch(0.24 0.01 150);
+  --primary: oklch(0.38 0.05 145);
+  --primary-dark: oklch(0.28 0.04 145);
+  --primary-foreground: oklch(0.96 0.012 80);
+  --secondary: oklch(0.66 0.16 50);
+  --secondary-foreground: oklch(0.98 0.005 80);
+  --gold: oklch(0.74 0.11 75);
+  --muted: oklch(0.92 0.012 80);
+  --muted-foreground: oklch(0.45 0.02 145);
+  --accent: oklch(0.74 0.11 75);
+  --accent-foreground: oklch(0.24 0.01 150);
+  --card: oklch(0.98 0.008 80);
+  --card-foreground: oklch(0.24 0.01 150);
+  --border: oklch(0.88 0.015 80);
+  --input: oklch(0.88 0.015 80);
+  --ring: oklch(0.66 0.16 50);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0.005 80);
+  --popover: oklch(0.98 0.008 80);
+  --popover-foreground: oklch(0.24 0.01 150);
+  --radius: 18px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out both;
+}
+
+.hover-scale {
+  transition: transform 0.4s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+body {
+  background: red !important;
+}
